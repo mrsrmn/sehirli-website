@@ -1,13 +1,15 @@
 import type { Component } from 'solid-js';
 
+import styles from '../App.module.css';
+
 const Agreement: Component = () => {
     return (
-        <div style="background-color: black">
-            <div style="padding: 30px; padding-bottom: 50px">
-                <h2>Kullanıcı Sözleşmesi</h2>
-                <p>Son güncellenme: 06/07/2023</p>
+        <div class={styles.doc}>
+            <div>
+                <h1 class={styles.docTitle}>Kullanıcı Sözleşmesi</h1>
+                <p class={styles.docMeta}>Son güncellenme: 06/07/2023</p>
 
-                <div style="text-align: left">
+                <div class={styles.docBody}>
                     <h2>Kullanım Koşulları</h2>
                     <p>Sevgili ziyaretçimiz, lütfen https://sehirli.online web sitemizi ziyaret etmeden önce işbu kullanım koşulları sözleşmesini dikkatlice okuyunuz. Siteye erişiminiz tamamen bu sözleşmeyi kabulünüze ve bu sözleşme ile belirlenen şartlara uymanıza bağlıdır. Şayet bu sözleşmede yazan herhangi bir koşulu kabul etmiyorsanız, lütfen siteye erişiminizi sonlandırınız. Siteye erişiminizi sürdürdüğünüz takdirde, koşulsuz ve kısıtlamasız olarak, işbu sözleşme metninin tamamını kabul ettiğinizin, tarafımızca varsayılacağını lütfen unutmayınız.
                     </p>
@@ -42,7 +44,7 @@ const Agreement: Component = () => {
                     <p>Uyuşmazlık Çözümü: İşbu Sözleşme'nin uygulanmasından veya yorumlanmasından doğacak her türlü uyuşmazlığın çözümünde, Türkiye Cumhuriyeti yasaları uygulanır; Yozgat Adliyesi Mahkemeleri ve İcra Daireleri yetkilidir.
                     </p>
 
-                    <h1>Gizlilik Politikası</h1>
+                    <h2 id="gizlilik">Gizlilik Politikası</h2>
                     <p>
                     Güvenliğiniz bizim için önemli. Bu sebeple bizimle paylaşacağınız kişisel verileriz hassasiyetle korunmaktadır.
                     </p>
@@ -96,7 +98,7 @@ const Agreement: Component = () => {
                     Sizlere talepleriniz doğrultusunda hizmet sunabilmek amacıyla, sadece gerekli olan kişisel verilerinizin,
                     işbu gizlilik ve kişisel verilerin işlenmesi politikası uyarınca işlenmesini, kabul edip etmemek hususunda tamamen özgürsünüz. Uygulamayı kullanmaya devam ettiğiniz takdirde, kabul etmiş olduğunuz tarafımızca varsayılacaktır. Şayet kabul etmiyorsanız, lütfen uygulamayı tüm cihazlarınızdan kaldırınız. Ayrıntılı bilgi için bizimle sehirliapp@gmail.com e-mail adresi üzerinden iletişime geçmekten lütfen çekinmeyiniz.
                     </p>
-                    <p>Bu gizlilik politikası, <a href="https://sartlar.com/" style="color: white">https://sartlar.com</a> aracılığıyla oluşturulmuştur.</p>
+                    <p>Bu gizlilik politikası, <a href="https://sartlar.com/">https://sartlar.com</a> aracılığıyla oluşturulmuştur.</p>
 
                 </div>
             </div>

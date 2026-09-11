@@ -1,82 +1,590 @@
-.App {
-  text-align: center;
-  position: relative;
-  background-color: black;
-  font-family: "Kanit";
-  position: relative;
-}
+/* ---------- Shell ---------- */
 
-.topnav {
-  background-color: black;
-  overflow: hidden;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 600,
-  'GRAD' 200,
-  'opsz' 48
-}
-
-.topnav p {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 19px 20px 0 0;
-  text-decoration: none;
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0;
-}
-
-.a:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-weight: 300;
-  width: 100vw;
-}
-
-.topnav span {
-  float: left;
-  color: white;
-  padding: 20px 20px;
-  font-size: 40px !important;
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--seh-bg);
+  color: var(--seh-text);
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px var(--seh-gutter);
+  border-bottom: 1px solid var(--seh-line);
+  background: rgba(8, 9, 10, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--seh-text);
+}
+
+.brand:hover {
+  color: var(--seh-text);
+}
+
+/* Three ascending bars inside a hairline square — the Şehirli mark. */
+.mark {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--seh-red);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  padding: 3px;
+  flex: none;
+}
+
+.markBar {
+  display: block;
+  width: 3px;
+  background: var(--seh-red);
+}
+
+.markBarA { height: 6px; }
+.markBarB { height: 11px; }
+.markBarC { height: 8px; }
+
+.brandName {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 32px);
+  font-family: var(--seh-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--seh-muted);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navLink {
+  color: var(--seh-muted);
+}
+
+.navCta {
+  color: var(--seh-text);
+  border: 1px solid var(--seh-line-loud);
+  padding: 8px 14px;
+}
+
+.navCta:hover {
+  border-color: var(--seh-red);
+}
+
+/* ---------- Store buttons ---------- */
+
+.storeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.storeButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+}
+
+.storePrimary {
+  background: var(--seh-text);
+  color: var(--seh-bg);
+  border: 1px solid var(--seh-text);
+}
+
+.storePrimary:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--seh-bg);
+}
+
+.storeSecondary {
+  border: 1px solid var(--seh-line-loud);
+  color: var(--seh-text);
+}
+
+.storeSecondary:hover {
+  border-color: var(--seh-red);
+  color: var(--seh-text);
+}
+
+.storeOs {
+  font-family: var(--seh-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  opacity: 0.55;
+}
+
+.storeOsAlt {
+  font-family: var(--seh-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--seh-muted);
+}
+
+.storeLabel {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(48px, 7vw, 104px) var(--seh-gutter);
+  max-width: var(--seh-max);
+  margin: 0 auto;
+}
+
+.heroCopy,
+.heroArt {
+  min-width: 0;
+}
+
+.heroArt {
+  display: flex;
+  justify-content: center;
+}
+
+.heroEyebrow {
+  font-family: var(--seh-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--seh-red);
+  margin-bottom: 22px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 6.2vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 0 0 24px;
+  text-wrap: balance;
+}
+
+.heroLine {
+  display: block;
+}
+
+.heroBody {
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.55;
+  color: var(--seh-text-soft);
+  max-width: 46ch;
+  margin: 0 0 34px;
+  text-wrap: pretty;
+}
+
+.heroButtons {
+  margin-bottom: 26px;
+}
+
+.heroNote {
+  font-family: var(--seh-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--seh-dim);
+}
+
+/* ---------- Phone mockup ---------- */
+
+.phone {
   position: relative;
-  background-color: black;
-  min-height: 100vh;
+  width: min(310px, 80vw);
+  aspect-ratio: 9 / 19.2;
+  border: 1px solid var(--seh-line-strong);
+  border-radius: 36px;
+  padding: 9px;
+  background: var(--seh-panel-raised);
+}
+
+.phoneNotch {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 22px;
+  background: var(--seh-bg);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.phoneScreen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--seh-bg);
+}
+
+/* ---------- Image slot ---------- */
+
+.slot {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  text-align: center;
+  color: var(--seh-dim);
+  background: rgba(255, 255, 255, 0.015);
 }
 
-underline {
-  text-decoration: underline;
-  font-weight: 400;
+.slotIcon {
+  width: 26px;
+  height: 26px;
+  opacity: 0.5;
 }
+
+.slotLabel {
+  font-family: var(--seh-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  max-width: 22ch;
+}
+
+.slotImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Stats ---------- */
+
+.stats {
+  border-top: 1px solid var(--seh-line);
+  border-bottom: 1px solid var(--seh-line);
+  background: var(--seh-panel);
+}
+
+.statsInner {
+  max-width: var(--seh-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stat {
+  padding: 26px clamp(16px, 3vw, 36px);
+  border-right: 1px solid var(--seh-line);
+}
+
+.stat:last-child {
+  border-right: 0;
+}
+
+.statValue {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font-family: var(--seh-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.13em;
+  color: var(--seh-muted);
+  margin-top: 8px;
+}
+
+/* ---------- Section scaffolding ---------- */
+
+.section {
+  padding: var(--seh-section-y) var(--seh-gutter);
+  max-width: var(--seh-max);
+  margin: 0 auto;
+  border-top: 1px solid var(--seh-line);
+}
+
+.eyebrow {
+  font-family: var(--seh-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--seh-red);
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-size: clamp(28px, 3.6vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin: 0 0 48px;
+  max-width: 18ch;
+}
+
+/* Hairline grid: a 1px gap over a light background paints the dividers. */
+.hairlineGrid {
+  display: grid;
+  gap: 1px;
+  background: var(--seh-line);
+  border: 1px solid var(--seh-line);
+}
+
+.hairlineGrid > * {
+  background: var(--seh-panel);
+}
+
+/* ---------- 01 — İşleyiş ---------- */
+
+.steps {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.step {
+  padding: clamp(24px, 3vw, 38px);
+}
+
+.stepKicker {
+  font-family: var(--seh-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  margin-bottom: 28px;
+}
+
+.kickerRed { color: var(--seh-red); }
+.kickerAmber { color: var(--seh-amber); }
+.kickerBlue { color: var(--seh-blue); }
+
+.stepTitle {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.stepBody {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--seh-muted);
+  margin: 0;
+}
+
+/* ---------- 02 — Özellikler ---------- */
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.shotCard {
+  border: 1px solid var(--seh-line);
+  background: var(--seh-panel);
+  padding: 14px;
+}
+
+.shotFrame {
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+.shotLabel {
+  font-family: var(--seh-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.13em;
+  color: var(--seh-muted);
+  padding: 14px 4px 4px;
+}
+
+.features {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feature {
+  padding: 26px;
+}
+
+.featureTitle {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+
+.featureBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--seh-muted);
+  margin: 0;
+}
+
+/* ---------- 03 — Bağımsızlık ---------- */
+
+.statement {
+  padding: clamp(56px, 8vw, 120px) var(--seh-gutter);
+  border-top: 1px solid var(--seh-line);
+  background: var(--seh-panel);
+}
+
+.statementInner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.statementEyebrow {
+  margin-bottom: 28px;
+}
+
+.statementText {
+  font-size: clamp(20px, 2.6vw, 32px);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.statementMark {
+  color: var(--seh-red);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- İndir ---------- */
+
+.download {
+  padding: clamp(56px, 8vw, 120px) var(--seh-gutter);
+  border-top: 1px solid var(--seh-line);
+}
+
+.downloadInner {
+  max-width: var(--seh-max);
+  margin: 0 auto;
+}
+
+.downloadTitle {
+  font-size: clamp(32px, 4.4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 0 0 20px;
+  max-width: 14ch;
+}
+
+.downloadBody {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--seh-muted);
+  max-width: 44ch;
+  margin: 0 0 30px;
+}
+
+/* ---------- Footer ---------- */
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0; 
-  right: 0;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  border-top: 1px solid var(--seh-line);
+  padding: 32px var(--seh-gutter);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--seh-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--seh-dim);
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  align-items: center;
+}
+
+.footerLink {
+  color: var(--seh-muted);
+}
+
+/* ---------- Document pages (sözleşme / iletişim) ---------- */
+
+.doc {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: var(--seh-section-y) var(--seh-gutter);
+}
+
+.docTitle {
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.docMeta {
+  font-family: var(--seh-mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--seh-dim);
+  margin: 0 0 44px;
+}
+
+.docBody h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 44px 0 14px;
+}
+
+.docBody h3 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 32px 0 10px;
+}
+
+.docBody p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--seh-text-soft);
+  margin: 0 0 16px;
+}
+
+.docBody a {
+  color: var(--seh-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.docLead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--seh-text-soft);
 }
